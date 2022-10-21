@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>JavaScript Project 1</title>
+</head>
+<body>
+    <header>
+        <h1>JavaScript Example Project</h1>
+    </header>
+    <!-- tabel cu proprietati masina -->
+    <main class="container body">
+        <div class="container table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Brand</th>
+                        <th>Model</th>
+            
+                        <th>Putere[CP]</th>
+                        <th>Locuri</th>
+                        <th>Portiere</th>
+
+                        <th>Delete Button</th>
+                    </tr>
+                </thead>
+            
+                <tbody class="container-masini">
+                </tbody>
+            </table>
+            <button class="btn-load">Click</button>
+        </div>
+
+        <div class="container add">
+            
+            <!-- grid layout -->
+            <!-- <label class="label item brand" for="brand">Brand:</label>
+            <input class="input item brand" type="text" id="brand">
+            
+            <label class="label item model" for="model">Model:</label>
+            <input class="input item model" type="text" id="model">
+            
+            <label class="label item putere" for="putere">Putere[CP]:</label>
+            <input class="input item putere" type="number" id="putere">
+            
+            <label class="label item locuri" for="locuri">Locuri:</label>
+            <input class="input item locuri" type="number" id="locuri">
+            
+            <label class="label item portiere" for="portiere">Portiere:</label>
+            <input class="input item portiere" type="number" id="portiere"> -->
+
+
+            <div class="item brand">
+                <label for="brand">Brand:</label>
+                <input class="add-brand" type="text" id="brand">
+            </div>
+            <div class="item model">
+                <label for="model">Model:</label>
+                <input class="add-model" type="text" id="model">
+            </div>
+            <div class="item putere">
+                <label for="putere">Putere[CP]:</label>
+                <input class="add-putere" type="number" id="putere">
+            </div>
+            <div class="item locuri">
+                <label for="locuri">Locuri:</label>
+                <input class="add-locuri" type="number" id="locuri">
+            </div>
+            <div class="item portiere">
+                <label for="portiere">Portiere:</label>
+                <input class="add-portiere" type="number" id="portiere">
+            </div>
+            <button class="btn-add">Add</button>
+        </div>
+    </main>
+
+    <footer>
+        
+    </footer>
+
+    <script src="./data.js"></script>
+    <script src="./functions.js"></script>
+    <script src="./app.js"></script>
+
+</body>
+</html>
