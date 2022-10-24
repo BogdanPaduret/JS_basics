@@ -1,18 +1,26 @@
 let container = document.querySelector(".container-masini");
 let btnLoad = document.querySelector(".btn-load");
 let btnAdd = document.querySelector(".btn-add");
-container.innerHTML = createRows(masini);
-// btnLoad.addEventListener("click", () => {
-//
-// });
-
 let addBrand = document.querySelector("#brand");
 let addModel = document.querySelector("#model");
 let addPutere = document.querySelector("#putere");
 let addLocuri = document.querySelector("#locuri");
 let addPortiere = document.querySelector("#portiere");
 
+let select = document.querySelector("#filter-brand");
+
+let selectDefault = document.querySelector("#default-brand-filter");
+
 let masina;
+
+container.innerHTML = createRows(masini);
+
+populateBrands(masini);
+
+btnLoad.addEventListener("click", () => {
+  reset();
+  container.innerHTML = createRows(masini);
+});
 
 btnAdd.addEventListener("click", () => {
   let newMasina = {
@@ -30,8 +38,9 @@ btnAdd.addEventListener("click", () => {
     masini = update(masini, masina, newMasina);
   }
 
-  container.innerHTML = createRows(masini);
   reset();
+  populateBrands;
+  container.innerHTML = createRows(masini);
 });
 
 container.addEventListener("click", (e) => {
@@ -53,4 +62,9 @@ container.addEventListener("click", (e) => {
     addPortiere.value = masina.portiere;
     btnAdd.textContent = "Update";
   }
+});
+
+select.addEventListener("change", (e) => {
+  console.log(select.value);
+  container.innerHTML = createRows(filterBrand(masini, select.value));
 });

@@ -13,42 +13,50 @@ body{
     grid-template-columns: 200px minmax(350px, auto);
     gap: 10px;
     grid-template-areas:
-    "h h"
-    "a m"
-    "a f";
+    "hd hd"
+    "ad ma"
+    "fl ft";
 }
 
 header{
-    grid-area: h;
+    grid-area: hd;
 }
 main{
-    grid-area: m;
+    grid-area: ma;
 }
 footer{
-    grid-area: f;
+    grid-area: ft;
 }
 
 .container.body{
-    /* margin-left: 210px; */
     display: flex;
     flex-direction: row;
-    /* width: 100%; */
     align-items: flex-start;
     justify-content: space-around;
 }
 
+/* .container.body{
+    display: grid;
+    gap: 10px;
+    grid-template-areas:
+    "ad tb"
+    "fl tb";
+} */
+
 .container.table{
+    grid-area: tb;
     display: flex;
     flex-direction: column;
 }
 
 .container.add {
-    grid-area: a;
+    grid-area: ad;
 
     display: flex;
     flex-direction: column;
 
     position: fixed;
+    top: 100px;
     left: 10px;
     width: 200px;
     height: 130px;
@@ -57,13 +65,33 @@ footer{
     border: 1px solid rgb(250, 221, 160);
 }
 
-.container.add input{
+.container.add input,
+.container.filter select{
+    box-sizing: border-box;
     width: 100px;
 }
 
-.add .item{
+.add .item,
+.filter .item{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 10px;
+}
+
+.container.filter{
+    grid-area: fl;
+
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    top: 240px;
+    left: 10px;
+    width: 200px;
+    height: 130px;
+    background: rgb(255, 239, 228);
+    box-sizing: border-box;
+    border: 1px solid rgb(250, 221, 160);
+
 }

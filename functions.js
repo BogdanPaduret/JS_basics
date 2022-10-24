@@ -39,13 +39,17 @@ function reset() {
   let locuri = document.querySelector("#locuri");
   let portiere = document.querySelector("#portiere");
 
+  let select = document.querySelector("#filter-brand");
+
   brand.value = "";
   model.value = "";
   putere.value = "";
   locuri.value = "";
   portiere.value = "";
 
+  select.value = "default";
   btnAdd.textContent = "Add";
+  populateBrands(masini);
 }
 
 function deleteCar(arr, delBrand, delModel) {
@@ -73,4 +77,43 @@ function update(arr, masina, inlocuitor) {
     }
   }
   return arr;
+}
+
+function getBrands(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (newArr.includes(arr[i].brand) === false) {
+      newArr.push(arr[i].brand);
+    }
+  }
+
+  return newArr;
+}
+
+function populateBrands(arr) {
+  let brands = getBrands(arr);
+
+  let select = document.querySelector("#filter-brand");
+
+  select.innerHTML = `
+  <option id="default-brand-filter" value="default" hidden selected>-- Please select an option --</option>
+  `;
+
+  brands.forEach((e) => {
+    let option = document.createElement("option");
+
+    option.textContent = e;
+
+    select.appendChild(option);
+  });
+}
+
+function filterBrand(arr, brand) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].brand == brand) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
 }
